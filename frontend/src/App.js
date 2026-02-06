@@ -2,7 +2,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import axios from 'axios';
 import './App.css';
 
-const API_URL = 'http://localhost:5000/api';
+const API_URL = process.env.REACT_APP_API_URL || 'http://localhost:5000/api';
 
 function App() {
   const [sessionId, setSessionId] = useState(null);
@@ -37,6 +37,7 @@ function App() {
     if (selectedRM) {
       initializeSession();
     }
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [selectedRM]);
 
   // Scroll to bottom when messages change
