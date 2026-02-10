@@ -72,12 +72,35 @@ function App() {
   };
 
   const handleSavePrompts = async () => {
+    // Show warning before saving
+    const confirmed = window.confirm(
+      '⚠️ IMPORTANT WARNING ⚠️\n\n' +
+      'Prompt changes will affect ALL USERS globally!\n\n' +
+      'Impact:\n' +
+      '• Changes apply to ALL conversations\n' +
+      '• Server restart required for immediate effect\n' +
+      '• Without restart, only NEW sessions get changes\n\n' +
+      'Have you tested these changes thoroughly in localhost?\n\n' +
+      'Click OK to proceed with global update.'
+    );
+    
+    if (!confirmed) {
+      return; // User cancelled
+    }
+    
     try {
       await axios.post(`${API_URL}/prompts/update`, {
         systemPrompt: systemPrompt,
         taskPrompt: taskPrompt
       });
-      alert('✅ Prompts updated successfully! Start a new chat to see changes.');
+      alert(
+        '✅ Prompts updated successfully!\n\n' +
+        'NEXT STEPS:\n' +
+        '1. Restart backend server for immediate effect\n' +
+        '2. Or wait - new chat sessions will use updated prompts\n' +
+        '3. Existing sessions continue with old prompts\n\n' +
+        'Start a new chat to see changes.'
+      );
       setShowSettings(false);
     } catch (error) {
       console.error('Failed to save prompts:', error);

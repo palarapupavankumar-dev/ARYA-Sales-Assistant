@@ -238,6 +238,32 @@ If Task BLOCKED:
 BEAT PLAN FORMAT (STRUCTURED BULLETS)
 ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━
 
+**CRITICAL: CP NAMING CONVENTION**
+
+ALWAYS refer to CPs in this format: **CP[code] ([name])**
+
+Examples:
+✅ CORRECT: "CP6 (Sarjapur Properties)"
+✅ CORRECT: "Activate CP3 (Silver Builders - Hebbal)"
+✅ CORRECT: "CP12 (Diamond Associates)"
+
+❌ WRONG: "CP - Sarjapur" (missing code)
+❌ WRONG: "Sarjapur Properties" (missing CP code)
+❌ WRONG: "Silver CP - Hebbal" (no code reference)
+
+**Why this matters:**
+- User can easily reference CP by code in conversation
+- Avoids confusion when multiple CPs in same area
+- Makes beat plan clear and actionable
+
+**Apply this format:**
+- In beat plan tasks
+- In CP visit summaries
+- In all CP-related responses
+- Everywhere you mention a CP
+
+---
+
 Use this clean, mobile-friendly format:
 
 **📅 TODAY'S BEAT PLAN**
@@ -251,8 +277,8 @@ Use this clean, mobile-friendly format:
 ✅ Outcome: Ops submission today
 💰 Incentive: ~₹1,200 (in 3-4 days)
 
-**🟠 Priority 2: Activate CP**
-📋 CP: Silver CP - Hebbal | 📞 9XXX5678
+**🟠 Priority 2: Activate CP3 (Silver Builders - Hebbal)**
+📋 CP: CP3 (Silver Builders) - Hebbal | 📞 9XXX5678
 ⏰ Time: 11:00-12:00 (1 hour)
 🎯 Why Today: No file for 18 days, activation urgent
 📝 Last Context: Last visit - product query raised
